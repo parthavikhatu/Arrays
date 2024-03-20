@@ -1,0 +1,207 @@
+1.Program to copy all elements of one array into another array
+public class CopyArray {    
+    public static void main(String[] args) {        
+             //Initialize array     
+        int [] arr1 = new int [] {1, 2, 3, 4, 5};     
+         //Create another array arr2 with size of arr1    
+        int arr2[] = new int[arr1.length];    
+        //Copying all elements of one array into another    
+        for (int i = 0; i < arr1.length; i++) {     
+            arr2[i] = arr1[i];     
+        }      
+         //Displaying elements of array arr1     
+        System.out.println("Elements of original array: ");    
+        for (int i = 0; i < arr1.length; i++) {     
+           System.out.print(arr1[i] + " ");    
+        }     
+            
+        System.out.println();    
+            
+        //Displaying elements of array arr2     
+        System.out.println("Elements of new array: ");    
+        for (int i = 0; i < arr2.length; i++) {     
+           System.out.print(arr2[i] + " ");    
+        }     
+    }    
+}   
+
+2.Program to find the frequency of each element in the array
+public class Frequency {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 8, 3, 2, 2, 2, 5, 1};  
+        //Array fr will store frequencies of element  
+        int [] fr = new int [arr.length];  
+        int visited = -1;  
+        for(int i = 0; i < arr.length; i++){  
+            int count = 1;  
+            for(int j = i+1; j < arr.length; j++){  
+                if(arr[i] == arr[j]){  
+                    count++;  
+                    //To avoid counting same element again  
+                    fr[j] = visited;  
+                }  
+            }  
+            if(fr[i] != visited)  
+                fr[i] = count;  
+        }  
+  
+        //Displays the frequency of each element present in array  
+        System.out.println("---------------------------------------");  
+        System.out.println(" Element | Frequency");  
+        System.out.println("---------------------------------------");  
+        for(int i = 0; i < fr.length; i++){  
+            if(fr[i] != visited)  
+                System.out.println("    " + arr[i] + "    |    " + fr[i]);  
+        }  
+        System.out.println("----------------------------------------");  
+    }}  
+
+
+
+3.Program to left rotate the elements of an array
+class RotateLeft {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        //n determine the number of times an array should be rotated  
+        int n = 3;  
+        //Displays original array  
+        System.out.println("Original array: ");  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+        //Rotate the given array by n times toward left  
+        for(int i = 0; i < n; i++){  
+            int j, first;  
+            //Stores the first element of the array  
+            first = arr[0];  
+            for(j = 0; j < arr.length-1; j++){  
+                //Shift element of array by one  
+                arr[j] = arr[j+1];  
+            }  
+            //First element of array will be added to the end  
+            arr[j] = first;  
+        }  
+        System.out.println();  
+        //Displays resulting array after rotation  
+        System.out.println("Array after left rotation: ");  
+        for(int i = 0; i< arr.length; i++){  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+}  
+
+4.Program to print the duplicate elements of an array
+public class DuplicateElement {  
+public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 2, 7, 8, 8, 3};  
+        System.out.println("Duplicate elements in given array: ");  
+        //Searches for duplicate element  
+        for(int i = 0; i < arr.length; i++) {  
+            for(int j = i + 1; j < arr.length; j++) {  
+                if(arr[i] == arr[j])  
+                    System.out.println(arr[j]);  
+            }  
+        }  
+    }  
+}  
+
+5.Program to print the elements of an array
+public class PrintArray {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Elements of given array: ");  
+        //Loop through the array by incrementing value of i  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+}  
+
+6.Program to print the elements of an array in reverse order
+public class ReverseArray {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Original array: ");  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+        System.out.println();  
+        System.out.println("Array in reverse order: ");  
+        //Loop through the array in reverse order  
+        for (int i = arr.length-1; i >= 0; i--) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+}  
+
+7.Program to print the elements of an array present on even position
+public class EvenPosition {  
+    public static void main(String[] args) {  
+  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+  
+        System.out.println("Elements of given array present on even position: ");  
+        //Loop through the array by incrementing value of i by 2  
+        //Here, i will start from 1 as first even positioned element is present at position 1.  
+        for (int i = 1; i < arr.length; i = i+2) {  
+            System.out.println(arr[i]);  
+        }  
+    }  
+}  
+  
+
+8.Program to print the elements of an array present on odd position
+
+public class OddPosition {  
+    public static void main(String[] args) {  
+        //Initialize array  
+       int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Elements of given array present on odd position: ");  
+        //Loop through the array by incrementing value of i by 2  
+        for (int i = 0; i < arr.length; i = i+2) {  
+            System.out.println(arr[i]);  
+        }  
+    }  
+}  
+
+9.Program to print the largest element in an array
+public class LargestElement_array {  
+    public static void main(String[] args) {  
+  
+        //Initialize array  
+        int [] arr = new int [] {25, 11, 7, 75, 56};  
+        //Initialize max with first element of array.  
+        int max = arr[0];  
+        //Loop through the array  
+        for (int i = 0; i < arr.length; i++) {  
+            //Compare elements of array with max  
+           if(arr[i] > max)  
+               max = arr[i];  
+        }  
+        System.out.println("Largest element present in given array: " + max);  
+    }  
+}  
+
+10.Program to print the smallest element in an array
+public class SmallestElement_array {  
+    public static void main(String[] args) {  
+  
+        //Initialize array  
+        int [] arr = new int [] {25, 11, 7, 75, 56};  
+        //Initialize min with first element of array.  
+        int min = arr[0];  
+        //Loop through the array  
+        for (int i = 0; i < arr.length; i++) {  
+            //Compare elements of array with min  
+           if(arr[i] <min)  
+               min = arr[i];  
+        }  
+        System.out.println("Smallest element present in given array: " + min);  
+    }  
+}  
